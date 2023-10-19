@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import {Box, Button, Center, Flex, useMediaQuery} from "@chakra-ui/react";
 import {Camera} from "react-camera-pro";
 import { useRouter } from "next/router";
-import Overlay from "@components/overlay";
+import Overlay from "@components/Overlay";
 
 function Home({data}) {
   const router = useRouter();
