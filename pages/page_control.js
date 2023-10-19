@@ -80,7 +80,7 @@ function Home({data}) {
           rounded={{base: 'none', md: '24', lg: '24'}}>         
           <Flex direction="column" background="white">
             <Center>
-              <Camera ref={camera} numberOfCamerasCallback={setNumberOfCameras} facingMode="user" aspectRatio={ratio} />
+              <Camera ref={camera} numberOfCamerasCallback={setNumberOfCameras} facingMode="user" aspectRatio={ratioç} />
               <Overlay overlay={"/"+router.query.overlay+".svg"}/>
               <img src="/camera.svg" width="70px" height="70px" alt="Logo" style={imageCamera} onClick={capture}/> 
             </Center>
