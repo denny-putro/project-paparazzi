@@ -13,6 +13,7 @@ function Home({data}) {
   const [ratio, setRatio] = useState(9 / 16);
 
   console.log("/"+router.query.overlay+".svg");
+  console.log(router.query.facingMode);
 
   useEffect(()=>{
     //set ratio camera
@@ -80,7 +81,7 @@ function Home({data}) {
           rounded={{base: 'none', md: '24', lg: '24'}}>         
           <Flex direction="column" background="white">
             <Center>
-              <Camera ref={camera} numberOfCamerasCallback={setNumberOfCameras} facingMode="user" aspectRatio={ratio} />
+              <Camera ref={camera} numberOfCamerasCallback={setNumberOfCameras} facingMode={router.query.facingMode} aspectRatio={ratio} />
               <Overlay overlay={"/"+router.query.overlay+".svg"}/>
               <img src="/camera.svg" width="70px" height="70px" alt="Logo" style={imageCamera} onClick={capture}/> 
             </Center>
