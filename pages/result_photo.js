@@ -70,8 +70,8 @@ import {
                 <Box mt={10}>
                   <Center>
                     <Image
-                      boxSize="400px"
-                      objectPosition="-20% 20%"
+                      boxSize="600px"
+                      objectPosition="-10% 10%"
                       src={myFoto.replace("data:image/jpeg;base64,:", "")}
                       objectFit={"cover"}
                     />

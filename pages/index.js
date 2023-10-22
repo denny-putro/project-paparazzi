@@ -25,15 +25,31 @@ export default function Home() {
       <main>
         <FormControl mt={6}>
           <Stack>
-            <Text align={"center"} fontSize='2xl' color={"#black"} as='b'>Project Paparazzi</Text>
+            <Text align={"center"} fontSize='2xl' color={"#black"}>Project Paparazzi</Text>
           </Stack>
         </FormControl>
-        <FormControl mt={6}>
-          <Button link="/page_control" overlay="overlay0" title="control"/>
-          <Button link="/page_control" overlay="overlay1" title="option 1"/>
-          <Button link="/page_control" overlay="overlay2" title="option 2"/>
-          <Button link="/page_control" overlay="overlay3" title="option 3"/>
+        <FormControl  mt={4} mb={2}>
+          <Stack>
+            <Text align={"center"} fontSize='s' color={"#black"}>Selfie</Text>
+          </Stack>
         </FormControl>
+        <Flex align="center" justifyContent="space-between" gap="8px">
+          <Button link="/page_control" overlay="overlay0" facingMode="user" title="control"/>
+          <Button link="/page_control" overlay="overlay1" facingMode="user"  title="option 1"/>
+          <Button link="/page_control" overlay="overlay2" facingMode="user"  title="option 2"/>
+          <Button link="/page_control" overlay="overlay3" facingMode="user"  title="option 3"/>
+        </Flex>
+        <FormControl  mt={4} mb={2}>
+          <Stack>
+            <Text align={"center"} fontSize='s' color={"#black"}>Card</Text>
+          </Stack>
+        </FormControl>
+        <Flex align="center" justifyContent="space-between" gap="8px">
+          <Button link="/page_control" overlay="overlay0" facingMode="environment" title="control"/>
+          <Button link="/page_control" overlay="overlay1" facingMode="environment"  title="option 1"/>
+          <Button link="/page_control" overlay="overlay2" facingMode="environment"  title="option 2"/>
+          <Button link="/page_control" overlay="overlay3" facingMode="environment"  title="option 3"/>
+        </Flex>
         <FormControl mt={6}>
           <Stack>
             <Text align={"center"} fontSize='s' color={"#black"} as='b'>By FS Design Team</Text>
