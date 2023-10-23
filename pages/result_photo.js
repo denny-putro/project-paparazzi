@@ -53,25 +53,23 @@ import {
     };
   
     return (
-      <Box bgImage={{ base: 'none', md: '/112.png', lg: '/112.png' }} bgPosition="center" bgSize='cover' h='100vh'>
-        <Center>
+      <Center>
           <Box maxW='sm' 
             mt={{ base: '0px', md: '10px', lg: '10px' }} 
             height={{ base: '100%', md: '50%', lg: '25%'}}
-            width={{ base: '600px', md: '50%', lg: '25%', }} 
+            width={{ base: '100%', md: '50%', lg: '25%', }} 
             borderWidth={{base: '0px', md: '1px', lg: '1px'}}
             bg='teal.400'
             justifyContent="center" 
-            overflow='hidden' 
-            borderRadius='lg' 
-            rounded={24}>         
-            <Flex direction="column" background="white" p={5}>
+            overflow='hidden'
+            >         
+            <Flex direction="column" background="white">
               <Box>
-                <Box mt={10}>
+                <Box>
                   <Center>
                     <Image
-                      boxSize="600px"
-                      objectPosition="-10% 10%"
+                      boxSize="100%"
+                      objectPosition="0% 10%"
                       src={myFoto.replace("data:image/jpeg;base64,:", "")}
                       objectFit={"cover"}
                     />
@@ -100,6 +98,5 @@ import {
             </Flex>
           </Box>
         </Center>
-      </Box>
     );
   }

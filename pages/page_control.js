@@ -49,7 +49,12 @@ function Home({data}) {
       canvas.height = img.height;
       var ctx = canvas.getContext("2d");
       ctx.translate(canvas.width, 0);
-      ctx.scale(-1, 1);
+      if(router.query.facingMode=="user"){
+        ctx.scale(-1, 1);
+      }
+      else {
+        ctx.scale(1, 1);
+      }
       ctx.drawImage(img, 0, 0);
       cb(canvas.toDataURL("image/jpeg"));
     };
