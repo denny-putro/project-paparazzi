@@ -45,10 +45,9 @@ export default function Home() {
           </Stack>
         </FormControl>
         <Flex align="center" justifyContent="space-between" gap="8px">
-          <Button link="/page_control" overlay="overlay0" facingMode="environment" title="control"/>
-          <Button link="/page_control" overlay="overlay1" facingMode="environment"  title="option 1"/>
-          <Button link="/page_control" overlay="overlay2" facingMode="environment"  title="option 2"/>
-          <Button link="/page_control" overlay="overlay3" facingMode="environment"  title="option 3"/>
+          <Button link="/page_control" overlay="overlay_KTP0" facingMode="environment" title="control"/>
+          <Button link="/page_control" overlay="overlay_KTP1" facingMode="environment"  title="option 1"/>
+          <Button link="/page_control" overlay="overlay_KTP2" facingMode="environment"  title="option 2"/>
         </Flex>
         <FormControl mt={6}>
           <Stack>
