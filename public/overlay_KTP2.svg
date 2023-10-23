@@ -1,9 +1,9 @@
 <svg width="375" height="812" viewBox="0 0 375 812" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_1559_9639)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M375 0H0V812H375V0ZM312 216C312 212.686 309.314 210 306 210L71 210C67.6863 210 65 212.686 65 216L65 595.08C65 598.394 67.6863 601.08 71 601.08H306C309.314 601.08 312 598.394 312 595.08L312 216Z" fill="#0B0B0D"/>
-<rect x="311" y="211" width="390" height="245" rx="7.20912" transform="rotate(90 311 211)" stroke="white" stroke-width="2"/>
-<rect x="252.191" y="485.487" width="93.949" height="117.971" rx="7.20912" transform="rotate(90 252.191 485.487)" stroke="white" stroke-width="2"/>
-<rect x="261.632" y="223.368" width="229.264" height="21.2636" rx="6.84093" transform="rotate(90 261.632 223.368)" stroke="white" stroke-width="2.73637"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M375 0H0V812H375V0ZM312 122C312 118.686 309.314 116 306 116L71 116C67.6863 116 65 118.686 65 122L65 501.08C65 504.394 67.6863 507.08 71 507.08H306C309.314 507.08 312 504.394 312 501.08L312 122Z" fill="#0B0B0D"/>
+<rect x="311" y="118" width="390" height="245" rx="7.20912" transform="rotate(90 311 118)" stroke="white" stroke-width="2"/>
+<rect x="252.191" y="392.487" width="93.949" height="117.971" rx="7.20912" transform="rotate(90 252.191 392.487)" stroke="white" stroke-width="2"/>
+<rect x="261.632" y="130.368" width="229.264" height="21.2636" rx="6.84093" transform="rotate(90 261.632 130.368)" stroke="white" stroke-width="2.73637"/>
 </g>
 <defs>
 <clipPath id="clip0_1559_9639">

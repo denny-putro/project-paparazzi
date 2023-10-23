@@ -1,9 +1,13 @@
 .button {
-    padding: 16px;
-    text-align: center;
+    padding: 8px;
+    min-width: 100px;
+    min-height: 100px;
     border: 1px solid #eaeaea;
-    border-radius: 16px;
+    border-radius: 50px;
     user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .button:hover {

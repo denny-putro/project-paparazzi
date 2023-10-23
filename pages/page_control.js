@@ -36,6 +36,10 @@ function Home({data}) {
     });
   };
 
+  const switchCam = () => {
+    camera.current.switchCamera();
+  };
+
   const rotateImage = (imageBase64, rotation, cb) => {
     var img = new Image();
     img.src = imageBase64;
@@ -55,6 +59,12 @@ function Home({data}) {
   const imageCamera = {
     position: "absolute",
     bottom: "10%",
+  };
+
+  const imageSwitch = {
+    position: "absolute",
+    bottom: "10%",
+    left: "10%",
   };
 
   const cameraMarking = {
@@ -84,6 +94,7 @@ function Home({data}) {
               <Camera ref={camera} numberOfCamerasCallback={setNumberOfCameras} facingMode={router.query.facingMode} aspectRatio={ratio} />
               <Overlay overlay={"/"+router.query.overlay+".svg"}/>
               <img src="/camera.svg" width="70px" height="70px" alt="Logo" style={imageCamera} onClick={capture}/> 
+              <img src="/switch.svg" width="70px" height="70px" alt="Logo" style={imageSwitch} onClick={switchCam}/> 
             </Center>
           </Flex>
         </Box>

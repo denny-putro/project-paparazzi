@@ -23,7 +23,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <FormControl mt={6}>
+        <FormControl>
           <Stack>
             <Text align={"center"} fontSize='2xl' color={"#black"}>Project Paparazzi</Text>
           </Stack>
@@ -33,7 +33,7 @@ export default function Home() {
             <Text align={"center"} fontSize='s' color={"#black"}>Selfie</Text>
           </Stack>
         </FormControl>
-        <Flex align="center" justifyContent="space-between" gap="8px">
+        <Flex align="center" justifyContent="space-between" gap="8px" padding="24px" flexWrap="wrap">
           <Button link="/page_control" overlay="overlay0" facingMode="user" title="control"/>
           <Button link="/page_control" overlay="overlay1" facingMode="user"  title="option 1"/>
           <Button link="/page_control" overlay="overlay2" facingMode="user"  title="option 2"/>
@@ -44,7 +44,7 @@ export default function Home() {
             <Text align={"center"} fontSize='s' color={"#black"}>Card</Text>
           </Stack>
         </FormControl>
-        <Flex align="center" justifyContent="space-between" gap="8px">
+        <Flex align="center" justifyContent="space-between" gap="8px" padding="24px" flexWrap="wrap">
           <Button link="/page_control" overlay="overlay_KTP0" facingMode="environment" title="control"/>
           <Button link="/page_control" overlay="overlay_KTP1" facingMode="environment"  title="option 1"/>
           <Button link="/page_control" overlay="overlay_KTP2" facingMode="environment"  title="option 2"/>
