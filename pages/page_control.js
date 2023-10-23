@@ -67,12 +67,6 @@ function Home({data}) {
     left: "10%",
   };
 
-  const status = {
-    position: "absolute",
-    bottom: "5%",
-    color: "#FFFFFF",
-  };
-
   const cameraMarking = {
     position: "absolute",
     "width": "100%",
@@ -97,11 +91,10 @@ function Home({data}) {
           rounded={{base: 'none', md: '24', lg: '24'}}>         
           <Flex direction="column" background="white">
             <Center>
-              <Camera ref={camera} numberOfCamerasCallback={setNumberOfCameras} facingMode={router.query.facingMode} aspectRatio={9/16} />
+              <Camera ref={camera} numberOfCamerasCallback={setNumberOfCameras} facingMode={router.query.facingMode} aspectRatio={ratio} />
               <Overlay overlay={"/"+router.query.overlay+".svg"}/>
               <img src="/camera.svg" width="70px" height="70px" alt="Logo" style={imageCamera} onClick={capture}/> 
               <img src="/switch.svg" width="70px" height="70px" alt="Logo" style={imageSwitch} onClick={switchCam}/> 
-              <span style={status}>screen size : {mobileScreen} </span>
             </Center>
           </Flex>
         </Box>
