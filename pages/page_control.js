@@ -118,7 +118,7 @@ function Home({data}) {
       <Center>
         <Camera ref={camera} numberOfCamerasCallback={setNumberOfCameras} facingMode={router.query.facingMode} aspectRatio={ratio} />
         <Overlay overlay={"/"+router.query.overlay+".svg"}/>
-        <img src="/camera.svg" width="70px" height="70px" alt="Logo" style={imageCamera} onClick={(router.query.countdown=="true") ? startCount : capture}/> 
+        <img src="/camera.svg" width="92px" height="92px" alt="Logo" style={imageCamera} onClick={(router.query.countdown=="true") ? startCount : capture}/> 
         <div style={(isStart) ? countdownTimer : countdownTimerHidden}>{count}</div>
       </Center>
     </Box>

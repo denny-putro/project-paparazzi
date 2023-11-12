@@ -1,7 +1,7 @@
 .container {
     margin-top: 16px;
     display: flex;
-    width: 351px;
+    width: 384px;
     padding: 24px;
     flex-direction: column;
     align-items: flex-start;
@@ -13,16 +13,16 @@
 }
 
 .result {
-    width: 300px;
-    height: 300px;
+    width: 334px;
+    height: 334px;
     border-radius: 30px;
     object-fit: cover;
     object-position: 0% 30%;
 }
 
 .resultRotate {
-    width: 300px;
-    height: 300px;
+    width: 334px;
+    height: 334px;
     border-radius: 30px;
     object-fit: cover;
     object-position: 0% 30%;
@@ -30,5 +30,5 @@
 }
 
 .guideline {
-   width: 300px; 
+   width: 334px;
 }
