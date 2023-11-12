@@ -5,13 +5,13 @@ import {
     Center,
     Flex,
     FormControl,
-    Image,
     Stack,
     Text,
     useToast
   } from "@chakra-ui/react";
   import { useRouter } from "next/router";
   import { useState, useEffect } from "react";
+  import Result from "@components/Result";
   
   export default function ResultPhoto() {
     const router = useRouter();
@@ -67,30 +67,13 @@ import {
               <Box>
                 <Box>
                   <Center>
-                    <Image
-                      boxSize="100%"
-                      objectPosition="0% 10%"
-                      src={myFoto.replace("data:image/jpeg;base64,:", "")}
-                      objectFit={"cover"}
-                    />
+                    <Result landscape={router.query.landscape} src={myFoto.replace("data:image/jpeg;base64,:", "")} srcResult={"/result_Selfie_Good.svg"}/>
                   </Center>
                 </Box>
-                <FormControl mt={6}>
-                  <Stack>
-                    <Text align={"center"} fontSize='2xl' color={"#black"} as='b'>Ganteng Abiez!</Text>
-                  </Stack>
-                </FormControl>
                 <FormControl mt={6} >
                   <Center>
                       <Button colorScheme="blue" width="60%" variant="outline" rounded={10} onClick={reSelfie}>
-                          Take Re-Selfie
-                      </Button>
-                  </Center>
-                </FormControl>
-                <FormControl mt={6} >
-                  <Center>
-                      <Button bg="#FD541E" width="60%" rounded={10} colorScheme="orange" onClick="">
-                          Save Photo
+                          Continue
                       </Button>
                   </Center>
                 </FormControl>

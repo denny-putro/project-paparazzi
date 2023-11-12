@@ -1,12 +1,17 @@
 <svg width="375" height="812" viewBox="0 0 375 812" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_1559_9639)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M375 0H0V812H375V0ZM312 122C312 118.686 309.314 116 306 116L71 116C67.6863 116 65 118.686 65 122L65 501.08C65 504.394 67.6863 507.08 71 507.08H306C309.314 507.08 312 504.394 312 501.08L312 122Z" fill="#0B0B0D"/>
-<rect x="311" y="118" width="390" height="245" rx="7.20912" transform="rotate(90 311 118)" stroke="white" stroke-width="2"/>
-<rect x="252.191" y="392.487" width="93.949" height="117.971" rx="7.20912" transform="rotate(90 252.191 392.487)" stroke="white" stroke-width="2"/>
-<rect x="261.632" y="130.368" width="229.264" height="21.2636" rx="6.84093" transform="rotate(90 261.632 130.368)" stroke="white" stroke-width="2.73637"/>
+<g clip-path="url(#clip0_2019_37037)">
+<mask id="mask0_2019_37037" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="375" height="812">
+<path d="M375 0H0V812H375V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2019_37037)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M375 0H0V812H375V0ZM18 216C14.6863 216 12 218.686 12 222V410C12 413.314 14.6863 416 18 416H357C360.314 416 363 413.314 363 410V222C363 218.686 360.314 216 357 216H18Z" fill="#0B0B0D"/>
+<path d="M357 217H18C15.2386 217 13 219.239 13 222V410C13 412.761 15.2386 415 18 415H357C359.761 415 362 412.761 362 410V222C362 219.239 359.761 217 357 217Z" stroke="#8BE200" stroke-width="2"/>
+</g>
+<rect x="251" y="247" width="88" height="107" rx="7.20912" stroke="#8BE200" stroke-width="2"/>
+<rect x="26.3682" y="247.368" width="194.264" height="21.2636" rx="6.84093" stroke="#8BE200" stroke-width="2.73637"/>
 </g>
 <defs>
-<clipPath id="clip0_1559_9639">
+<clipPath id="clip0_2019_37037">
 <rect width="375" height="812" fill="white"/>
 </clipPath>
 </defs>

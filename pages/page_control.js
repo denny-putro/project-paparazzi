@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import {Box, Button, Center, Flex, useMediaQuery} from "@chakra-ui/react";
+import {Box, Center, Flex, useMediaQuery} from "@chakra-ui/react";
 import {Camera} from "react-camera-pro";
 import { useRouter } from "next/router";
 import Overlay from "@components/Overlay";
@@ -11,9 +11,6 @@ function Home({data}) {
   const [image, setImage] = useState(null);
   const [mobileScreen] = useMediaQuery('(min-width: 600px)');
   const [ratio, setRatio] = useState(9 / 16);
-
-  console.log("/"+router.query.overlay+".svg");
-  console.log(router.query.facingMode);
 
   useEffect(()=>{
     //set ratio camera
@@ -29,10 +26,11 @@ function Home({data}) {
 
   const capture = () => {
     const imageSrc = camera.current.takePhoto();
-    rotateImage(imageSrc, 90, (image) => {
+    rotateImage(imageSrc,(image) => {
       setImage(image);
       localStorage.setItem('myPhoto', image);
-      router.push("/result_photo");
+      //router.push("/result_photo");
+      router.push({pathname: "/result_photo", query: {landscape: router.query.landscape}});
     });
   };
 
@@ -40,7 +38,7 @@ function Home({data}) {
     camera.current.switchCamera();
   };
 
-  const rotateImage = (imageBase64, rotation, cb) => {
+  const rotateImage = (imageBase64, cb) => {
     var img = new Image();
     img.src = imageBase64;
     img.onload = () => {
@@ -51,11 +49,13 @@ function Home({data}) {
       ctx.translate(canvas.width, 0);
       if(router.query.facingMode=="user"){
         ctx.scale(-1, 1);
+        ctx.drawImage(img, 0, 0);
       }
       else {
-        ctx.scale(1, 1);
+        ctx.scale(-1, 1);
+        ctx.drawImage(img, 0, 0);
       }
-      ctx.drawImage(img, 0, 0);
+      
       cb(canvas.toDataURL("image/jpeg"));
     };
   };
@@ -72,37 +72,54 @@ function Home({data}) {
     left: "10%",
   };
 
-  const cameraMarking = {
+  const countdownTimer = {
     position: "absolute",
-    "width": "100%",
-    "height": "100%",
-    // "background-position": "center",
-    "top": "0",
+    width: "100%",
+    height: "100vh",
+    margin: "auto",
+    top: "0",
+    bottom: "0",
+    color: "#FFF",
+    background: "rgba(0,0,0,0.5)",
+    fontSize: "48px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
   }
+
+  const countdownTimerHidden = {
+    opacity: "0"
+  }
+
+  const time = 3;
+  const [count, setCount] = useState(time);
+  const [isStart, setIsStart] = useState(false);
+
+  useEffect(() => {
+    if (isStart) {
+      const timer = setTimeout(() => {
+        if (count > 0) {
+          setCount(count - 1)
+        } else {
+          setIsStart(false);
+          clearInterval(timer);
+          capture();
+        }
+      }, 1000);
+    }
+  }, [count, isStart]);
+
+  const startCount = () => {
+    setIsStart(true);
+  };
 
   return (
     <Box bgPosition="center" bgSize='cover' h='100vh'>
       <Center>
-        <Box maxW='sm'
-          mt={{ base: '0px', md: '10px', lg: '10px' }} 
-          height={{ base: '100%', md: '50%', lg: '25%'}}
-          width={{ base: '600px', md: '50%', lg: '25%', }} 
-          borderWidth={{base: '0px', md: '1px', lg: '1px'}}
-          bg='teal.400'
-          justifyContent="center" 
-          overflow='hidden' 
-          position={{base: '', md: '', lg: 'relative'}}
-          borderRadius='lg' 
-          rounded={{base: 'none', md: '24', lg: '24'}}>         
-          <Flex direction="column" background="white">
-            <Center>
-              <Camera ref={camera} numberOfCamerasCallback={setNumberOfCameras} facingMode={router.query.facingMode} aspectRatio={ratio} />
-              <Overlay overlay={"/"+router.query.overlay+".svg"}/>
-              <img src="/camera.svg" width="70px" height="70px" alt="Logo" style={imageCamera} onClick={capture}/> 
-              <img src="/switch.svg" width="70px" height="70px" alt="Logo" style={imageSwitch} onClick={switchCam}/> 
-            </Center>
-          </Flex>
-        </Box>
+        <Camera ref={camera} numberOfCamerasCallback={setNumberOfCameras} facingMode={router.query.facingMode} aspectRatio={ratio} />
+        <Overlay overlay={"/"+router.query.overlay+".svg"}/>
+        <img src="/camera.svg" width="70px" height="70px" alt="Logo" style={imageCamera} onClick={(router.query.countdown=="true") ? startCount : capture}/> 
+        <div style={(isStart) ? countdownTimer : countdownTimerHidden}>{count}</div>
       </Center>
     </Box>
   );
