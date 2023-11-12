@@ -1,17 +1,11 @@
 import {
-    Box,
-    Button,
-    ButtonGroup,
     Center,
-    Flex,
-    FormControl,
-    Stack,
-    Text,
     useToast
   } from "@chakra-ui/react";
   import { useRouter } from "next/router";
   import { useState, useEffect } from "react";
   import Result from "@components/Result";
+  import Reset from '@components/Reset'
   
   export default function ResultPhoto() {
     const router = useRouter();
@@ -40,46 +34,10 @@ import {
         });
     }
   
-    function reSelfie(){
-      router.push({
-          pathname: "/"
-      });
-    }
-    
-    //css
-    const imageResult = {
-      "border-radius": "50%",
-      "object-fit": "cover"
-    };
-  
     return (
       <Center>
-          <Box maxW='sm' 
-            mt={{ base: '0px', md: '10px', lg: '10px' }} 
-            height={{ base: '100%', md: '50%', lg: '25%'}}
-            width={{ base: '100%', md: '50%', lg: '25%', }} 
-            borderWidth={{base: '0px', md: '1px', lg: '1px'}}
-            bg='teal.400'
-            justifyContent="center" 
-            overflow='hidden'
-            >         
-            <Flex direction="column" background="white">
-              <Box>
-                <Box>
-                  <Center>
-                    <Result landscape={router.query.landscape} src={myFoto.replace("data:image/jpeg;base64,:", "")} srcResult={"/result_Selfie_Good.svg"}/>
-                  </Center>
-                </Box>
-                <FormControl mt={6} >
-                  <Center>
-                      <Button colorScheme="blue" width="60%" variant="outline" rounded={10} onClick={reSelfie}>
-                          Continue
-                      </Button>
-                  </Center>
-                </FormControl>
-              </Box>
-            </Flex>
-          </Box>
+          <Result landscape={router.query.landscape} src={myFoto.replace("data:image/jpeg;base64,:", "")} srcResult={"/result_Selfie_Good.svg"}/>
+          <Reset link="/" cta={true} title={"Ulang"}/>
         </Center>
     );
   }
