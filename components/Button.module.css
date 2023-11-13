@@ -2,16 +2,19 @@
   padding: 8px;
   min-width: 100px;
   min-height: 100px;
-  border: 1px solid #eaeaea;
   border-radius: 50px;
   user-select: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #024590;
+  background-color: #D1F0FF;
+  font-size: 48px;
 }
 
 .circle:hover {
-  background-color: beige;
+  background-color: #0A9AF2;
+  color: #FFFFFF;
   cursor: pointer;
 }
 

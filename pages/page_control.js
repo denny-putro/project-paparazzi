@@ -30,7 +30,16 @@ function Home({data}) {
       setImage(image);
       localStorage.setItem('myPhoto', image);
       //router.push("/result_photo");
-      router.push({pathname: "/result_photo", query: {landscape: router.query.landscape}});
+      router.push(
+        {pathname: "/result_photo", 
+        query: {
+          landscape: router.query.landscape,
+          success: router.query.success,
+          facingMode: router.query.facingMode,
+          flow: router.query.flow,
+          }
+        }
+      );
     });
   };
 
@@ -66,10 +75,10 @@ function Home({data}) {
     bottom: "10%",
   };
 
-  const imageSwitch = {
+  const imageCameraLandscape = {
     position: "absolute",
     bottom: "10%",
-    left: "10%",
+    transform: "rotate(90deg)",
   };
 
   const countdownTimer = {
@@ -81,10 +90,26 @@ function Home({data}) {
     bottom: "0",
     color: "#FFF",
     background: "rgba(0,0,0,0.5)",
-    fontSize: "48px",
+    fontSize: "128px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center"
+  }
+
+  const countdownTimerLandscape = {
+    position: "absolute",
+    width: "100vh",
+    height: "100vw",
+    margin: "auto",
+    top: "0",
+    bottom: "0",
+    color: "#FFF",
+    background: "rgba(0,0,0,0.5)",
+    fontSize: "128px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    transform: "rotate(90deg)",
   }
 
   const countdownTimerHidden = {
@@ -118,8 +143,11 @@ function Home({data}) {
       <Center>
         <Camera ref={camera} numberOfCamerasCallback={setNumberOfCameras} facingMode={router.query.facingMode} aspectRatio={ratio} />
         <Overlay overlay={"/"+router.query.overlay+".svg"}/>
-        <img src="/camera.svg" width="92px" height="92px" alt="Logo" style={imageCamera} onClick={(router.query.countdown=="true") ? startCount : capture}/> 
-        <div style={(isStart) ? countdownTimer : countdownTimerHidden}>{count}</div>
+        <img 
+          src="/camera.svg" width="92px" height="92px" alt="Logo" 
+          style={(router.query.landscape=="true") ? imageCameraLandscape : imageCamera} 
+          onClick={(router.query.countdown=="true") ? startCount : capture}/> 
+        <div style={(isStart) ? (router.query.landscape=="true") ? countdownTimerLandscape : countdownTimer : countdownTimerHidden}>{count}</div>
       </Center>
     </Box>
   );

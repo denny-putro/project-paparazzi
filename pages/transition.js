@@ -11,7 +11,7 @@ function Transition({data}) {
   return (
     <Box bgPosition="center" bgSize='cover' h='100vh'>
       <Guideline guideline={(router.query.facingMode == "environment") ? "/tray_KTP.svg" : "/tray_Selfie.svg"}/>
-      <Button link="/page_control" overlay={router.query.overlay} facingMode={router.query.facingMode} countdown={router.query.countdown} landscape={router.query.landscape} cta={true} title={"Ambil Foto"}/>
+      <Button link="/page_control" overlay={router.query.overlay} flow={router.query.flow} facingMode={router.query.facingMode} countdown={router.query.countdown} landscape={router.query.landscape} success={router.query.success} cta={true} title={"Ambil Foto"}/>
     </Box>
   );
 }

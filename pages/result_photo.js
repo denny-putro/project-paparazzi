@@ -1,6 +1,9 @@
 import {
-    Center,
-    useToast
+    Flex,
+    useToast,
+    Text,
+    FormControl,
+    Stack
   } from "@chakra-ui/react";
   import { useRouter } from "next/router";
   import { useState, useEffect } from "react";
@@ -35,9 +38,22 @@ import {
     }
   
     return (
-      <Center>
-          <Result landscape={router.query.landscape} src={myFoto.replace("data:image/jpeg;base64,:", "")} srcResult={"/result_Selfie_Good.svg"}/>
-          <Reset link="/" cta={true} title={"Ulang"}/>
-        </Center>
+      <Flex flexDirection={"column"} alignItems={"center"}>
+          <Result 
+            landscape={router.query.landscape} 
+            src={myFoto.replace("data:image/jpeg;base64,:", "")} 
+            srcResult={
+              (router.query.success=="true")?
+                (router.query.facingMode=="user")?"/result_Selfie_Good.svg":"/result_Selfie_Good.svg"
+              :
+                (router.query.facingMode=="user")?"/result_Selfie_Bad.svg":"/result_Selfie_Bad.svg"
+              }/>
+            <FormControl mt={6}>
+            <Stack>
+              <Text align={"center"} fontSize='s' color={"#CDD0D1"} as='b'>Testing Flow {router.query.flow}</Text>
+              </Stack>
+            </FormControl>
+          <Reset link="/" cta={true} title={"Ambil Ulang"}/>
+        </Flex>
     );
   }
