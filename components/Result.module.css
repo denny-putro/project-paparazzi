@@ -20,13 +20,22 @@
     object-position: 0% 30%;
 }
 
+.resultFlip {
+    width: 334px;
+    height: 334px;
+    border-radius: 30px;
+    object-fit: cover;
+    object-position: 0% 30%;
+    transform: scaleX(-1);
+}
+
 .resultRotate {
     width: 334px;
     height: 334px;
     border-radius: 30px;
     object-fit: cover;
     object-position: 0% 30%;
-    transform: rotate(90deg);
+    transform: rotate(90deg) scaleY(-1);
 }
 
 .guideline {

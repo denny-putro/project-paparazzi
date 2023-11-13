@@ -40,7 +40,8 @@ import {
     return (
       <Flex flexDirection={"column"} alignItems={"center"}>
           <Result 
-            landscape={router.query.landscape} 
+            landscape={router.query.landscape}
+            facingMode={router.query.facingMode}
             src={myFoto.replace("data:image/jpeg;base64,:", "")} 
             srcResult={
               (router.query.success=="true")?
