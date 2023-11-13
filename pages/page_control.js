@@ -116,11 +116,37 @@ function Home({data}) {
     opacity: "0"
   }
 
+  const rotateGif = {
+    position: "absolute",
+    display: "block",
+    width: "200px",
+    margin: "auto",
+    top: "0",
+    bottom: "0",
+    left: "0",
+    right: "0",
+  }
+
+  const overlay = {
+    width: "100vw",
+    height: "100vh",
+    background: "#000",
+    position: "absolute",
+    top: "0",
+  }
+
   const time = 3;
   const [count, setCount] = useState(time);
   const [isStart, setIsStart] = useState(false);
+  const [isGif, setIsGif] = useState(true);
 
   useEffect(() => {
+    const Giftimer = setTimeout(() => {
+        if (isGif) {
+          setIsGif(false);
+        }
+      }, 5000);
+    
     if (isStart) {
       const timer = setTimeout(() => {
         if (count > 0) {
@@ -147,6 +173,11 @@ function Home({data}) {
           src="/camera.svg" width="92px" height="92px" alt="Logo" 
           style={(router.query.landscape=="true") ? imageCameraLandscape : imageCamera} 
           onClick={(router.query.countdown=="true") ? startCount : capture}/> 
+        {(router.query.landscape=="true" && isGif) ? 
+           <div style={overlay}>
+              <img style={rotateGif} src="/rotate.gif" alt="rotate"/>
+           </div>:""
+        }
         <div style={(isStart) ? (router.query.landscape=="true") ? countdownTimerLandscape : countdownTimer : countdownTimerHidden}>{count}</div>
       </Center>
     </Box>
