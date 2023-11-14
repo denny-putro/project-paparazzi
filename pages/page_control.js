@@ -165,7 +165,7 @@ function Home({data}) {
   };
 
   return (
-    <Box bgPosition="center" bgSize='cover' h='100vh'>
+    <Box bgPosition="center" bgSize='cover' h='100vh' overflow='hidden'>
       <Center>
         <Camera ref={camera} numberOfCamerasCallback={setNumberOfCameras} facingMode={router.query.facingMode} aspectRatio={ratio} />
         <Overlay overlay={"/"+router.query.overlay+".svg"}/>
