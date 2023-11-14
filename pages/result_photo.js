@@ -45,9 +45,9 @@ import {
             src={myFoto.replace("data:image/jpeg;base64,:", "")} 
             srcResult={
               (router.query.success=="true")?
-                (router.query.facingMode=="user")?"/result_Selfie_Good.svg":"/result_Selfie_Good.svg"
+                (router.query.facingMode=="user")?"/result_Selfie_Good.svg":"/result_KTP_Good.svg"
               :
-                (router.query.facingMode=="user")?"/result_Selfie_Bad.svg":"/result_Selfie_Bad.svg"
+                (router.query.facingMode=="user")?"/result_Selfie_Bad.svg":"/result_KTP_Bad.svg"
               }/>
             <FormControl mt={6}>
             <Stack>
